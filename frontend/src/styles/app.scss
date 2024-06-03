@@ -1,0 +1,103 @@
+@import "mixin";
+@import 'variables';
+@import 'admin-dashboard';
+@import "chart";
+@import 'dashboard';
+@import "mediaquery";
+
+[data-theme="light"]{
+  --bg-color:#ffffff;
+  --text-color:#333333;
+  --heading-color:#444444;
+}
+
+[data-theme="dark"]{
+ --bg-color:#333333;
+ --text-color:#ffffff;
+ --heading-color:#dddddd;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+     &::-webkit-scrollbar {
+        display: none;
+      }
+      background-color: var(--bg-color) !important;
+      color: var(--text-color);
+      max-width: 100vw;
+}
+
+
+a{
+    text-decoration: none;
+    color: $dark;
+}
+
+h1,h2,h3,h4,h5,h6,p,span{
+    color:var(--text-color) !important;
+}
+
+.switch-mode{
+    cursor: pointer;
+    margin: 0 auto;
+    font-size: 15%;
+    position: relative;
+    height: 16em;
+    width: 30em;
+    border-radius: 100px;
+    transition: all 500ms ease-in-out;
+  
+    .moon{
+        position: absolute;
+        display: block;
+        border-radius: 50%;
+        transition: all 400ms ease-in-out;
+        top: 3em;
+        left: 3em;
+        transform: rotate(-75deg);
+        width: 10em;
+        height: 10em;
+        background: #423966;
+        box-shadow: 3em 2.5em 0 0em #d9fbff inset, rgba(255, 255, 255, .1) 0em -7em 0 -4.5em, rgba(255, 255, 255, .1) 3em 7em 0 -4.5em, rgba(255, 255, 255, .1) 2em 13em 0 -4em, rgba(255, 255, 255, .1) 6em 2em 0 -4.1em, rgba(255, 255, 255, .1) 8em 8em 0 -4.5em, rgba(255, 255, 255, .1) 6em 13em 0 -4.5em, rgba(255, 255, 255, .1) -4em 7em 0 -4.5em, rgba(255, 255, 255, .1) -1em 10em 0 -4.5em;
+    }
+    
+    .sun {
+        position: absolute;
+        top: 4.5em;
+        left: 18em;
+        transform: rotate(0deg);
+        width: 7em;
+        height: 7em;
+        border-radius: 50%;
+        background: #fff;
+        transition: all 400ms ease-in-out;
+        box-shadow: 3em 3em 0 5em #fff inset, 0 -5em 0 -2.7em #fff, 3.5em -3.5em 0 -3em #fff, 5em 0 0 -2.7em #fff, 3.5em 3.5em 0 -3em #fff, 0 5em 0 -2.7em #fff, -3.5em 3.5em 0 -3em #fff, -5em 0 0 -2.7em #fff, -3.5em -3.5em 0 -3em #fff;
+    }
+   
+}
+
+
+.light{
+    background: #423966;
+    transition: all 500ms ease-in-out;
+}
+
+.day{
+    background: #ffbf71;
+    transition: all 500ms ease-in-out;
+    span{
+        color:white ;
+    }
+}
+.dark{
+    background: #1e1e1e;
+}
