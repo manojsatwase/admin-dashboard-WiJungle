@@ -2,7 +2,7 @@ import React from 'react'
 import AdminSidebar from '../../components/admin/AdminSidebar'
 import DashboardNav from './dashboardComponents/dashboardNav'
 import { widgetData } from '../../utils/widgetData';
-import WidgeComponent from './dashboardComponents/WidgeComponent';
+import WidgetComponent from './dashboardComponents/WidgetComponent';
 import PieChartsAnalysis from '../charts/PieChartsAnalysis';
 import { useTheme } from '../../components/context/ThemeContext';
 
@@ -14,7 +14,7 @@ const Dashboard = () => {
       <main className='dashboard'>
       <DashboardNav />
       <section className="widget-container">
-       <WidgeComponent widgetData={widgetData} />
+       <WidgetComponent widgetData={widgetData} />
       </section>
       <main className={theme === 'dark' ? 'chart-container dark':'chart-container'}>
         <PieChartsAnalysis/>
