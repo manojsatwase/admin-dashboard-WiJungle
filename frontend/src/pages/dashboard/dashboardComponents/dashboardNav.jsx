@@ -23,7 +23,7 @@ const DashboardNav = () => {
          </p>
          </div>
            <div className='dahsboard-user-info'>
-                 <h5>Edward William</h5>
+                 <h5>MS</h5>
                  <p>Admin</p>
            </div>
            <div className={theme ==='light' ? 'switch-mode light' :'switch-mode day'}
