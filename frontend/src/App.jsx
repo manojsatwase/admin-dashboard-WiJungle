@@ -1,25 +1,18 @@
-import { lazy, Suspense, useEffect } from "react";
-import { createBrowserRouter, Outlet, useNavigate } from "react-router-dom";
+import { lazy, Suspense } from "react";
+import { createBrowserRouter, Outlet } from "react-router-dom";
 import ProtectedRoute from "./utils/ProtectedRoute";
 import Loading from "./components/Loading";
+import useRedirectToDashboard from "./hooks/useRedirectToDashboard";
 
 const ErrorPage = lazy(() => import("./pages/ErrorPage"));
 
 // Admin Route
 const Dashboard = lazy(()=>import("./pages/dashboard/Dashboard"));
 
-
 const AppLayout = () => {
-  const navigate = useNavigate();
-  useEffect(()=>{
-    navigate("/admin/dashboard")
-  },[navigate]);
-  return (
-    <>
-      <Outlet />
-    </>
-  );
-};
+  useRedirectToDashboard();
+  return <Outlet />;
+}
 
 const LazyLoadingComponent = ({ component: LazyComponent }) => {
   return (
