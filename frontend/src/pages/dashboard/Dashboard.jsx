@@ -5,11 +5,9 @@ import { widgetData } from '../../utils/widgetData';
 import WidgetComponent from './dashboardComponents/WidgetComponent';
 import PieChartsAnalysis from '../charts/PieChartsAnalysis';
 import { useTheme } from '../../components/context/ThemeContext';
-import useRedirectToDashboard from '../../hooks/useRedirectToDashboard';
 
 const Dashboard = () => {
   const {theme} = useTheme();
-  useRedirectToDashboard();
   return (
     <div className='admin-container'>
     <AdminSidebar />
